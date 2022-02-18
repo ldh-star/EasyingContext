@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liangguo.easyingcontext">
+
+    <application>
+        <provider
+            android:name=".core.MyContentProvider"
+            android:exported="false"
+            android:multiprocess="true"
+            android:authorities="${applicationId}.easyingcontext"/>
+    </application>
+
+</manifest>
