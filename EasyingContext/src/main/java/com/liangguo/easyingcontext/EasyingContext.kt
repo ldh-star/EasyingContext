@@ -3,6 +3,7 @@ package com.liangguo.easyingcontext
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
+import androidx.fragment.app.FragmentActivity
 import com.liangguo.easyingcontext.core.ContextProvider
 import com.liangguo.easyingcontext.core.MyActivityManager
 import java.util.*
@@ -35,6 +36,16 @@ object EasyingContext {
      */
     val currentActivity: Activity?
         get() = MyActivityManager.activityStack.lastOrNull()?.get()
+
+    /**
+     * 当前栈顶的FragmentActivity
+     * 如果当前栈顶的Activity不是FragmentActivity，则会返回null
+     */
+    val currentFragmentActivity: Activity?
+        get() = currentActivity?.let {
+            if (it is FragmentActivity) it
+            else null
+        }
 
     /**
      * 当前的Activity栈
