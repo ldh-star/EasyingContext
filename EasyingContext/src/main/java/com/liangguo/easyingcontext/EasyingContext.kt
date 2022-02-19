@@ -41,7 +41,7 @@ object EasyingContext {
      * 当前栈顶的FragmentActivity
      * 如果当前栈顶的Activity不是FragmentActivity，则会返回null
      */
-    val currentFragmentActivity: Activity?
+    val currentFragmentActivity: FragmentActivity?
         get() = currentActivity?.let {
             if (it is FragmentActivity) it
             else null
