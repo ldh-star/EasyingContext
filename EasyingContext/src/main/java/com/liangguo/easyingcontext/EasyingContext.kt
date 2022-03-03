@@ -6,6 +6,7 @@ import android.app.Application
 import androidx.fragment.app.FragmentActivity
 import com.liangguo.easyingcontext.core.ContextProvider
 import com.liangguo.easyingcontext.core.MyActivityManager
+import java.lang.ref.WeakReference
 import java.util.*
 
 
@@ -55,5 +56,10 @@ object EasyingContext {
     val currentActivityStack: Stack<Activity>
         get() = MyActivityManager.getCurrentActivityStack()
 
+    /**
+     * Activity弱引用栈。
+     */
+    val activityWeakReferenceStack: Stack<WeakReference<Activity>>
+        get() = MyActivityManager.activityStack
 
 }
