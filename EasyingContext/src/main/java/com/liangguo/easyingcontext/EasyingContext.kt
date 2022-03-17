@@ -36,7 +36,7 @@ object EasyingContext {
      * Current stack top activity
      */
     val currentActivity: Activity?
-        get() = MyActivityManager.activityStack.lastOrNull()?.get()
+        get() = MyActivityManager.getLastActivity()
 
     /**
      * 当前栈顶的FragmentActivity

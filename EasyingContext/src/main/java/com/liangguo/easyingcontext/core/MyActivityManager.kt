@@ -44,4 +44,15 @@ internal object MyActivityManager {
         }
     }
 
+    /**
+     * 获取栈顶Activity
+     */
+    fun getLastActivity(): Activity? = activityStack.lastOrNull()?.let {
+        it.get() ?: let {
+            activityStack.pop()
+            getLastActivity()
+        }
+    }
+
+
 }
